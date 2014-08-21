@@ -1,6 +1,7 @@
 {
   "name": "contact-email",
   "version": "0.0.1",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js"
   },
@@ -9,5 +10,8 @@
     "express": "4",
     "mailgun-js": "0.5.4",
     "mongoose": "^3.8.15"
+  },
+  "engines": {
+    "node": "0.10.x"
   }
 }
