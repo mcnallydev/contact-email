@@ -1,4 +1,5 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var Mailgun = require('mailgun-js');
 var controllers = require('./controllers');
 //init express
