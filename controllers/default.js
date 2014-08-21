@@ -2,10 +2,10 @@ var Mailgun = require('mailgun-js');
 var models = require('../models');
 
 //Your api key, from Mailgun’s Control Panel
-var apiKey = process.env.MAILGUN_DOMAIN;
+var apiKey = process.env.MAILGUN_KEY;
 
 //Your domain, from the Mailgun Control Panel
-var domain = process.env.MAILGUN_KEY;
+var domain = process.env.MAILGUN_DOMAIN;
 
 module.exports = function(req, res) {
 
