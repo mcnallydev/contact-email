@@ -1,3 +1,4 @@
+var Mailgun = require('mailgun-js');
 var models = require('../models');
 
 //Your api key, from Mailgun’s Control Panel
