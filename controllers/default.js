@@ -31,7 +31,7 @@ module.exports = function(req, res) {
 
         mailgun.messages().send(data, function(err, body) {
           if (err) {
-            res.json({error:{message:err}});
+            res.json({error:{message:err.message}});
           }
           else {
             res.json({response:'Mensaje enviado'});
