@@ -1,9 +1,13 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var cors = require('cors');
 var Mailgun = require('mailgun-js');
 var controllers = require('./controllers');
 //init express
 var app = express();
+
+// cors
+app.use(cors());
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({extended: false}));
