@@ -9,6 +9,7 @@
     "body-parser": "^1.6.5",
     "cors": "^2.4.1",
     "express": "4",
+    "heroku-ip": "0.0.2",
     "mailgun-js": "0.5.4",
     "mongoose": "^3.8.15"
   },
