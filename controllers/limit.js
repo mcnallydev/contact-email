@@ -19,10 +19,20 @@ module.exports = function(req, res) {
             res.json({error:{message:err}});
           }
           else if (count <= process.env.LIMIT) {
-            res.json({'status':true, 'count':count});
+            res.json({
+              'status': true,
+              'count': count,
+              'ip': req.heroku.ip,
+              'id': req.params.id
+            });
           }
           else {
-            res.json({'status':false, 'count':count});
+            res.json({
+              'status': false,
+              'count': count,
+              'ip': req.heroku.ip,
+              'id': req.params.id
+            });
           }
         });
       }
