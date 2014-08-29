@@ -15,8 +15,8 @@ module.exports = function(req, res) {
           'client_id': req.params.id,
           'ip': req.heroku.ip,
           'created_at': {
-            '$gte': date.today(),
-            '$lte': date.tomorrow()
+            '$gte': Date.today(),
+            '$lte': Date.tomorrow()
           }
         }, function(err, count) {
           if (err) {
