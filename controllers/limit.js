@@ -1,5 +1,5 @@
 var models = require('../models');
-var dateUtil = require('date-utils');
+require('date-utils');
 
 module.exports = function(req, res) {
   // find customer
@@ -15,8 +15,8 @@ module.exports = function(req, res) {
           'client_id': req.params.id,
           'ip': req.heroku.ip,
           'created_at': {
-            '$gte': dateUtil.today(),
-            '$lte': dateUtil.tomorrow()
+            '$gte': date.today(),
+            '$lte': date.tomorrow()
           }
         }, function(err, count) {
           if (err) {
