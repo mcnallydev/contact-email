@@ -13,7 +13,11 @@ module.exports = function(req, res) {
         // get count log by client_id, ip address and date
         models.logs.count({
           'client_id': req.params.id,
-          'ip': req.heroku.ip
+          'ip': req.heroku.ip,
+          'created_at': {
+            '$gte': Date.today(),
+            '$lte': Date.tomorrow()
+          }
         }, function(err, count) {
           if (err) {
             res.json({error:{message:err}});
