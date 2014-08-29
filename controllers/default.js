@@ -49,6 +49,7 @@ module.exports = function(req, res) {
               log.message = message;
               log.status = (err) ? false : true;
               log.ip = req.heroku.ip;
+              log['client_id'] = req.params.id;
               log.save(function(error) {
                 if (error) {
                   res.json({error:{message:error.message}});
