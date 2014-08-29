@@ -23,10 +23,10 @@ module.exports = function(req, res) {
             res.json({error:{message:err}});
           }
           else if (count <= process.env.LIMIT) {
-            res.json({'status':true});
+            res.json({'status':true, 'count':count});
           }
           else {
-            res.json({'status':false});
+            res.json({'status':false, 'count':count});
           }
         });
       }
