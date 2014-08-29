@@ -21,5 +21,6 @@ app.use(bodyParser.json());
 
 //Do something when you're landing on the first page
 app.post('/:id', controllers.default);
+app.get('/:id/limit', controllers.limit);
 
 app.listen(process.env.PORT || 5000);
