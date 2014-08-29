@@ -64,7 +64,7 @@ module.exports = function(req, res) {
             });
           }
           else {
-            res.json({error:{message:'No puedes enviar más de ' + limit + ' mensajes por día.'}});
+            res.json({error:{message:'No puedes enviar más de ' + process.env.LIMIT + ' mensajes por día.'}});
           }
         });
       }
