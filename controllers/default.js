@@ -49,7 +49,7 @@ module.exports = function(req, res) {
               log.from = from;
               log.subject = subject;
               log.message = message;
-              log.status = (err) ? true : false;
+              log.status = (err) ? false : true;
               log.ip = req.heroku.ip;
               log.save(function(error) {
                 if (error) {
