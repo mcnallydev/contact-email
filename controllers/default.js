@@ -7,7 +7,7 @@ var apiKey = process.env.MAILGUN_KEY;
 //Your domain, from the Mailgun Control Panel
 var domain = process.env.MAILGUN_DOMAIN;
 
-var limit = 5;
+var limit = 3;
 
 module.exports = function(req, res) {
   // find customer
