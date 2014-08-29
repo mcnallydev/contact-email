@@ -30,12 +30,22 @@ module.exports = function(req, res) {
         };
 
         mailgun.messages().send(data, function(err, body) {
-          if (err) {
-            res.json({error:{message:err.message}});
-          }
-          else {
-            res.json({response:'Mensaje enviado'});
-          }
+          var log = new models.logs;
+          log.from = from;
+          log.subject = subject;
+          log.message = message;
+          log.status = (err) ? true : false;
+          log.save(function(error) {
+            if (error) {
+              res.json({error:{message:error.message}});
+            }
+            else if (err) {
+              res.json({error:{message:err.message}});
+            }
+            else {
+              res.json({response:'Mensaje enviado'});
+            }
+          });
         });
 
       }
