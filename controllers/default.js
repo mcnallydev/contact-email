@@ -7,8 +7,6 @@ var apiKey = process.env.MAILGUN_KEY;
 //Your domain, from the Mailgun Control Panel
 var domain = process.env.MAILGUN_DOMAIN;
 
-var limit = 3;
-
 module.exports = function(req, res) {
   // find customer
   models.customers.findById(req.params.id, function(err, customer) {
@@ -29,7 +27,7 @@ module.exports = function(req, res) {
           if (err) {
             res.json({error:{message:err}});
           }
-          else if (count <= limit) {
+          else if (count <= process.env.LIMIT) {
             var from = req.body.from;
             var to = customer.to;
             var subject = req.body.subject;
@@ -73,6 +71,5 @@ module.exports = function(req, res) {
         res.json({error:{message:'El usuario no existe'}});
       }
     }
-
   });
 };
