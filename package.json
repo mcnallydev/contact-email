@@ -1,6 +1,6 @@
 {
   "name": "contact-email",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
