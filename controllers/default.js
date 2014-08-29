@@ -1,5 +1,6 @@
 var Mailgun = require('mailgun-js');
 var models = require('../models');
+require('date-utils');
 
 //Your api key, from Mailgun’s Control Panel
 var apiKey = process.env.MAILGUN_KEY;
@@ -21,7 +22,8 @@ module.exports = function(req, res) {
           'client_id': req.params.id,
           'ip': req.heroku.ip,
           'created_at': {
-            $lte: now
+            '$gte': Date.today(),
+            '$lte': Date.tomorrow()
           }
         }, function(err, count) {
           if (err) {
